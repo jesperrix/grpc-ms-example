@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mymodelapi;
+
+service MyModelApi {
+    // Get predictions from model
+    rpc Predict(MyModelInput) returns (MyModelOutput) {}
+}
+
+message MyModelInput {
+    repeated int32 x = 1;
+    repeated int32 y = 2;
+}
+
+message MyModelOutput {
+    string model_id = 1;
+    repeated int32 y = 2;
+}
