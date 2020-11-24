@@ -72,10 +72,10 @@ The server is now ready to receive messages from a client.
 2020/11/24 10:35:39 sent/received 200 messages.
 ....
 ```
-#### Python
+##### Python
 How to run the Python server/client.
 
-##### Server
+###### Server
 ```
 # Make sure you are in the root of the repo
 > python python/server
@@ -84,7 +84,7 @@ INFO:root:Starting server at [::]:56789
 
 The server is now ready to receive messages from a client.
 
-##### Client
+###### Client
 ```
 # Make sure you are in the root of the repo
 > python python/client.py
