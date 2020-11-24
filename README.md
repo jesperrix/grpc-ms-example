@@ -1,5 +1,5 @@
 # grpc-ms-example
-This is a small GRPC microservice example. The idea is to show how gRPC can be used to serve a ML/DL model in production as a microservice.
+This is a small gRPC microservice example. The idea is to show how gRPC can be used to serve a ML/DL model in production as a microservice.
 
 
 The example includes a proto file, defining the gRPC service and messages and server/client in:
