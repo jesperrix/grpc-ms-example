@@ -24,11 +24,11 @@ def run():
             model_id = res.model_id
             model_out = res.y
             if i % 100 == 0:
-                print(f"recieved #{i}")
-                print(f"received from model: model_id={model_id}, model_out={model_out}")
+                logging.info(f"sent/recieved {i} messages.")
+                logging.info(f"model_id={model_id}, y={model_out}")
 
 
 
 if __name__ == '__main__':
-    logging.basicConfig()
+    logging.basicConfig(level=logging.INFO)
     run()

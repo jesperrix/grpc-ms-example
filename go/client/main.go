@@ -35,7 +35,7 @@ func main() {
 			log.Fatalf("%v.Predict(_) = _, %v: ", client, err)
 		}
 		if i%100 == 0 {
-			log.Printf("received %d messages.", i)
+			log.Printf("sent/received %d messages.", i)
 			log.Println(model_out)
 		}
 

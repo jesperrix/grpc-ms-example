@@ -22,7 +22,7 @@ type MyModelApiServer struct {
 
 func (s *MyModelApiServer) Predict(ctx context.Context, input *pb.MyModelInput) (*pb.MyModelOutput, error) {
 	s.c++
-	log.Printf("Recieved msg #%d", s.c)
+	log.Printf("recieved msg #%d", s.c)
 	return &pb.MyModelOutput{ModelId: "model_xyz", Y: []int32{1, 2, 3, s.c}}, nil
 }
 

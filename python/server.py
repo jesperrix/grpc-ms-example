@@ -15,17 +15,20 @@ class MyModelApiServicer(my_model_api_pb2_grpc.MyModelApiServicer):
     def Predict(self, request, context):
         """Predict function """
         self.c += 1
+        logging.info(f"recieved msg #{self.c}")
         return my_model_api_pb2.MyModelOutput(model_id="model_xyz", y=[1,2,3,self.c])
 
 
 def serve():
+    port = 56789
+    logging.info(f"Starting server at [::]:{port}")
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     my_model_api_pb2_grpc.add_MyModelApiServicer_to_server(
         MyModelApiServicer(), server)
-    server.add_insecure_port('[::]:56789')
+    server.add_insecure_port(f'[::]:{port}')
     server.start()
     server.wait_for_termination()
 
 if __name__ == '__main__':
-    logging.basicConfig()
+    logging.basicConfig(level=logging.INFO)
     serve()
